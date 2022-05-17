@@ -48,6 +48,21 @@ searchInput.addEventListener("keyup", (event) => {
     }
 });
 
+const addCoffeeRoast = document.getElementById("add-coffee-select");
+const addCoffeeName = document.getElementById("add-coffee-search");
+const addNewCoffee = document.getElementById("add-coffee-submit");
+addNewCoffee.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    let newCoffee = {
+        id: coffees.length + 1,
+        name: addCoffeeName.value,
+        roast: addCoffeeRoast.value
+};
+    coffees.push(newCoffee);
+   updateCoffees(event);
+})
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},

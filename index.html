@@ -30,15 +30,15 @@
         <h2 class="my-3 d-flex justify-content-center">Add A Coffee</h2>
         <form id="add-coffee">
             <h6 class="fw-bolder">Roast</h6>
-            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
-                <option selected>All</option>
-                <option value="1">Light</option>
-                <option value="2">Medium</option>
-                <option value="3">Dark</option>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="add-coffee-select">
+                <option selected value="all">All</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
             </select>
             <h6 class="fw-bolder">Coffee Name</h6>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn bg-primary text-light my-3 w-100" type="submit">Submit</button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="add-coffee-search">
+            <button class="btn bg-primary text-light my-3 w-100" type="submit" id="add-coffee-submit">Submit</button>
         </form>
     </section>
 </main>
