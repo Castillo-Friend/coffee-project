@@ -32,17 +32,18 @@ function updateCoffees(e) {
     });
     section.innerHTML = renderCoffees(filteredCoffees);
 }
+
 const searchInput = document.getElementById("searchInput");
 const coffeeNames = document.getElementsByClassName("coffeeNames")
 searchInput.addEventListener("keyup", (event) => {
-    const { value } = event.target;
+    const {value} = event.target;
     const searchQuery = value.toLowerCase();
     for (const nameElement of coffeeNames) {
         let name = nameElement.textContent.toLowerCase();
         if (name.includes(searchQuery)) {
-            nameElement.style.display = "block";
+            nameElement.parentNode.style.display = "block";
         } else {
-            nameElement.style.display = "none";
+            nameElement.parentNode.style.display = "none";
         }
     }
 });
