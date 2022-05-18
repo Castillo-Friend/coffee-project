@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<section class="coffee col-6 justify-content-center align-items-start p-3">';
     html += '<div class=" d-none">' + coffee.id + '</div>';
-    html += '<div class="  col-12 fs-2 coffeeNames">' + coffee.name + '<small class="fs-6 text-secondary fw-bolder">' + " " + coffee.roast + '</small>' + '</div>';
+    html += '<div class="  col-12 fs-2 coffeeNames">' + coffee.name + '<small class="fs-6 text-warning fw-bolder">' + " " + coffee.roast + '</small>' + '</div>';
     html += '</section>';
 
     return html;
