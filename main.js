@@ -3,8 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<section class="coffee col-6 justify-content-center align-items-start p-3">';
     html += '<div class=" d-none">' + coffee.id + '</div>';
-    html += '<div class="  col-12 fs-2 coffeeNames">' + coffee.name + '<small class="fs-6 text-info fw-bolder">' + " " + coffee.roast + '</small>' + '</div>';
-    // html += '<p class=" col-6 m-0 text-secondary fw-bolder">' + coffee.roast + '</p>';
+    html += '<div class="  col-12 fs-2 coffeeNames">' + coffee.name + '<small class="fs-6 text-secondary fw-bolder">' + " " + coffee.roast + '</small>' + '</div>';
     html += '</section>';
 
     return html;
@@ -27,7 +26,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
         if (roastSelection.value === "all"){
-           filteredCoffees = coffees;
+            filteredCoffees = coffees;
         }
     });
     section.innerHTML = renderCoffees(filteredCoffees);
@@ -59,14 +58,10 @@ addNewCoffee.addEventListener("click", (event) => {
         id: coffees.length + 1,
         name: addCoffeeName.value,
         roast: addCoffeeRoast.value
-};
+    };
     coffees.push(newCoffee);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
     updateCoffees(event);
-    // Set Item
-    localStorage.setItem(newCoffee,'addNewCoffee');
-    // Retrieve
-    document.getElementById("add-coffee-submit").innerHTML = localStorage.getItem("newCoffee");
-
 })
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -87,6 +82,16 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+let storedCoffees = localStorage.getItem('coffees');
+if(storedCoffees === null){
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+    storedCoffees = localStorage.getItem('coffees');
+}
+coffees = JSON.parse(storedCoffees);
+
+function removeCoffee() {
+    localStorage.removeItem('coffees');
+}
 var section = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
