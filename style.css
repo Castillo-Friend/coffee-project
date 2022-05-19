@@ -1,0 +1,28 @@
+/*font-family: 'Cinzel', serif;*/
+/*font-family: 'Poiret One', cursive;*/
+
+nav {
+    font-family: 'Cinzel', serif;
+}
+main {
+
+    font-family: 'Poiret One', cursive;
+}
+
+h2{
+    font-family: 'Cinzel', serif;
+}
+#coffees{
+    background-image: url("../img/pexels-drew-williams-3483967.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#menu{
+    position: relative;
+    opacity: 70%;
+
+}
+#menu{
+    border-radius: 10px;
+}
